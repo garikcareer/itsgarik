@@ -1,47 +1,108 @@
-import React from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
-import { Badge } from '../ui/badge'
-import { Code, Database, Globe, Server, Smartphone, Wrench } from 'lucide-react'
+import React from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import { Badge } from '../ui/badge';
+import {
+  Code,
+  Database,
+  Globe,
+  Server,
+  Smartphone,
+  Wrench,
+} from 'lucide-react';
 
 const SkillsSection: React.FC = () => {
   const skillCategories = [
     {
       title: 'Frontend Development',
       icon: Globe,
-      skills: ['React', 'TypeScript', 'JavaScript', 'HTML5', 'CSS3', 'Tailwind CSS', 'Next.js', 'Angular', 'Vue.js'],
-      color: 'text-blue-400'
+      skills: [
+        'React',
+        'TypeScript',
+        'JavaScript',
+        'HTML5',
+        'CSS3',
+        'Tailwind CSS',
+        'Next.js',
+        'Angular',
+        'Vue.js',
+      ],
+      color: 'text-blue-400',
     },
     {
       title: 'Backend Development',
       icon: Server,
-      skills: ['Java', 'Spring Boot', 'Node.js', 'Python', 'C#', '.NET', 'Express.js', 'RESTful APIs', 'GraphQL'],
-      color: 'text-green-400'
+      skills: [
+        'Java',
+        'Spring Boot',
+        'Node.js',
+        'Python',
+        'C#',
+        '.NET',
+        'Express.js',
+        'RESTful APIs',
+        'GraphQL',
+      ],
+      color: 'text-green-400',
     },
     {
       title: 'Database Technologies',
       icon: Database,
-      skills: ['MySQL', 'PostgreSQL', 'MongoDB', 'Redis', 'SQLite', 'Oracle', 'SQL Server'],
-      color: 'text-purple-400'
+      skills: [
+        'MySQL',
+        'PostgreSQL',
+        'MongoDB',
+        'Redis',
+        'SQLite',
+        'Oracle',
+        'SQL Server',
+      ],
+      color: 'text-purple-400',
     },
     {
       title: 'Mobile Development',
       icon: Smartphone,
-      skills: ['React Native', 'Flutter', 'Android (Java/Kotlin)', 'iOS (Swift)', 'Xamarin'],
-      color: 'text-pink-400'
+      skills: [
+        'React Native',
+        'Flutter',
+        'Android (Java/Kotlin)',
+        'iOS (Swift)',
+        'Xamarin',
+      ],
+      color: 'text-pink-400',
     },
     {
       title: 'Programming Languages',
       icon: Code,
-      skills: ['Java', 'JavaScript', 'TypeScript', 'Python', 'C#', 'C++', 'Go', 'Rust', 'PHP'],
-      color: 'text-yellow-400'
+      skills: [
+        'Java',
+        'JavaScript',
+        'TypeScript',
+        'Python',
+        'C#',
+        'C++',
+        'Go',
+        'Rust',
+        'PHP',
+      ],
+      color: 'text-yellow-400',
     },
     {
       title: 'Tools & Technologies',
       icon: Wrench,
-      skills: ['Git', 'Docker', 'Kubernetes', 'AWS', 'Azure', 'Jenkins', 'Maven', 'Gradle', 'Linux'],
-      color: 'text-orange-400'
-    }
-  ]
+      skills: [
+        'Git',
+        'Docker',
+        'Kubernetes',
+        'AWS',
+        'Azure',
+        'Jenkins',
+        'Maven',
+        'Gradle',
+        'Linux',
+      ],
+      color: 'text-orange-400',
+    },
+  ];
 
   return (
     <section id="skills">
@@ -52,16 +113,18 @@ const SkillsSection: React.FC = () => {
           </h2>
           <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Here are the technologies and tools I've learned and worked with throughout my development journey. 
-            I'm always eager to learn new technologies and expand my skill set, currently exploring cloud architecture, 
-            microservices, and modern DevOps practices to stay at the forefront of software development.
+            Here are the technologies and tools I've learned and worked with
+            throughout my development journey. I'm always eager to learn new
+            technologies and expand my skill set, currently exploring cloud
+            architecture, microservices, and modern DevOps practices to stay at
+            the forefront of software development.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {skillCategories.map((category, index) => (
-            <Card 
-              key={index} 
+            <Card
+              key={index}
               className="border-primary/20 hover:border-primary/50 transition-all duration-300 hover:scale-105 shadow-[0_0_15px_rgba(0,255,65,0.1)] hover:shadow-[0_0_25px_rgba(0,255,65,0.3)]"
             >
               <CardHeader className="text-center">
@@ -75,9 +138,9 @@ const SkillsSection: React.FC = () => {
               <CardContent>
                 <div className="flex flex-wrap gap-2 justify-center">
                   {category.skills.map((skill, skillIndex) => (
-                    <Badge 
+                    <Badge
                       key={skillIndex}
-                      variant="outline" 
+                      variant="outline"
                       className="border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200 cursor-default hover:shadow-[0_0_8px_rgba(0,255,65,0.3)]"
                     >
                       {skill}
@@ -90,7 +153,7 @@ const SkillsSection: React.FC = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default SkillsSection
+export default SkillsSection;

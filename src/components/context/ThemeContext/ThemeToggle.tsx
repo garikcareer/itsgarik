@@ -1,10 +1,10 @@
-import React from 'react'
-import { Moon, Sun } from 'lucide-react'
-import { Button } from '../../ui/button'
-import { useTheme } from './ThemeProvider'
+import React from 'react';
+import { Moon, Sun } from 'lucide-react';
+import { Button } from '../../ui/button';
+import { useTheme } from './ThemeProvider';
 
 const ThemeToggle: React.FC = () => {
-  const { theme, setTheme } = useTheme()
+  const { theme, setTheme } = useTheme();
 
   return (
     <Button
@@ -20,7 +20,7 @@ const ThemeToggle: React.FC = () => {
       )}
       <span className="sr-only">Toggle theme</span>
     </Button>
-  )
-}
+  );
+};
 
-export default ThemeToggle
+export default ThemeToggle;

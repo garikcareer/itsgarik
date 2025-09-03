@@ -1,21 +1,29 @@
-import React from 'react'
-import { Menu, Code, Mail, FileText, Briefcase, Trophy, GraduationCap } from 'lucide-react'
+import React from 'react';
+import {
+  Menu,
+  Code,
+  Mail,
+  FileText,
+  Briefcase,
+  Trophy,
+  GraduationCap,
+} from 'lucide-react';
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from '../ui/dropdown-menu'
-import { Button } from '../ui/button'
-import ThemeToggle from '../context/ThemeContext/ThemeToggle'
+} from '../ui/dropdown-menu';
+import { Button } from '../ui/button';
+import ThemeToggle from '../context/ThemeContext/ThemeToggle';
 
 const Navbar: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
+    const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
+      element.scrollIntoView({ behavior: 'smooth' });
     }
-  }
+  };
 
   return (
     <nav className="sticky top-0 w-full bg-background/20 backdrop-blur-sm border-b border-border/30">
@@ -92,7 +100,7 @@ const Navbar: React.FC = () => {
           {/* Theme Toggle and Mobile Menu */}
           <div className="flex items-center space-x-4">
             <ThemeToggle />
-            
+
             {/* Mobile menu */}
             <div className="md:hidden">
               <DropdownMenu>
@@ -111,7 +119,9 @@ const Navbar: React.FC = () => {
                     <Code className="mr-2 h-4 w-4" />
                     <span>Skills</span>
                   </DropdownMenuItem>
-                  <DropdownMenuItem onClick={() => scrollToSection('experience')}>
+                  <DropdownMenuItem
+                    onClick={() => scrollToSection('experience')}
+                  >
                     <Briefcase className="mr-2 h-4 w-4" />
                     <span>Experience</span>
                   </DropdownMenuItem>
@@ -134,7 +144,7 @@ const Navbar: React.FC = () => {
         </div>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

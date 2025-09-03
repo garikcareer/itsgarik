@@ -1,6 +1,6 @@
-import React from 'react'
-import { MapPin } from 'lucide-react'
-import portrait from '../../assets/images/portrait.jpg'
+import React from 'react';
+import { MapPin } from 'lucide-react';
+import portrait from '../../assets/images/portrait.jpg';
 
 const HeroSection: React.FC = () => {
   return (
@@ -19,24 +19,29 @@ const HeroSection: React.FC = () => {
                 />
               </div>
               {/* Matrix code overlay effect */}
-              <div className="absolute inset-0 rounded-full border-2 border-primary/20 animate-spin" style={{ animationDuration: '20s' }}></div>
+              <div
+                className="absolute inset-0 rounded-full border-2 border-primary/20 animate-spin"
+                style={{ animationDuration: '20s' }}
+              ></div>
             </div>
           </div>
-          
+
           {/* Main Title - Changed from ITSGarik.com to Garik's Portfolio */}
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-mono font-bold text-primary mb-4">
             Garik&apos;s Portfolio
           </h1>
           <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
-          
+
           {/* Enhanced Hero Statement */}
           <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-4">
-            Transforming ideas into reality through innovative code and cutting-edge technology solutions.
+            Transforming ideas into reality through innovative code and
+            cutting-edge technology solutions.
           </p>
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Full-stack developer specializing in scalable applications and seamless user experiences.
+            Full-stack developer specializing in scalable applications and
+            seamless user experiences.
           </p>
-          
+
           {/* Location with Icon - Reduced top margin */}
           <div className="flex items-center justify-center mt-4 text-muted-foreground">
             <MapPin className="h-4 w-4 mr-2 text-primary" />
@@ -45,7 +50,7 @@ const HeroSection: React.FC = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HeroSection
+export default HeroSection;

@@ -1,9 +1,14 @@
-import React from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
-import { Button } from '../ui/button'
-import { MapPin, Calendar, Code, GraduationCap, Brain } from 'lucide-react'
-import { CiMail } from "react-icons/ci";
-import { FaFacebookSquare, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import React from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import { Button } from '../ui/button';
+import { MapPin, Calendar, Code, GraduationCap, Brain } from 'lucide-react';
+import { CiMail } from 'react-icons/ci';
+import {
+  FaFacebookSquare,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+} from 'react-icons/fa';
 
 const ContactSection: React.FC = () => {
   const contactInfo = [
@@ -12,55 +17,55 @@ const ContactSection: React.FC = () => {
       label: 'Email',
       value: 'garikcareer@gmail.com',
       href: 'mailto:garikcareer@gmail.com',
-      copy: true
+      copy: true,
     },
     {
       icon: MapPin,
       label: 'Location',
       value: 'Los Angeles, CA',
       href: null,
-      copy: false
+      copy: false,
     },
     {
       icon: Calendar,
       label: 'Availability',
       value: 'Open to opportunities',
       href: null,
-      copy: false
-    }
-  ]
+      copy: false,
+    },
+  ];
 
   const socialLinks = [
     {
       name: 'GitHub',
       url: 'https://github.com/itsgarik',
       icon: FaGithub,
-      colorClass: 'social-icon-github'
+      colorClass: 'social-icon-github',
     },
     {
       name: 'LinkedIn',
       url: 'https://linkedin.com/in/itsgarik',
       icon: FaLinkedin,
-      colorClass: 'social-icon-linkedin'
+      colorClass: 'social-icon-linkedin',
     },
     {
       name: 'Instagram',
       url: 'https://instagram.com/itsgarik',
       icon: FaInstagram,
-      colorClass: 'social-icon-instagram'
+      colorClass: 'social-icon-instagram',
     },
     {
       name: 'Facebook',
       url: 'https://facebook.com/itsgarik',
       icon: FaFacebookSquare,
-      colorClass: 'social-icon-facebook'
-    }
-  ]
+      colorClass: 'social-icon-facebook',
+    },
+  ];
 
   const handleCopyEmail = () => {
-    navigator.clipboard.writeText('garik@itsgarik.com')
+    navigator.clipboard.writeText('garik@itsgarik.com');
     // You could add a toast notification here
-  }
+  };
 
   return (
     <section id="contact">
@@ -71,8 +76,9 @@ const ContactSection: React.FC = () => {
           </h2>
           <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            I&apos;m always interested in new opportunities, collaborations, and interesting projects. 
-            Let&apos;s connect and discuss how we can work together!
+            I&apos;m always interested in new opportunities, collaborations, and
+            interesting projects. Let&apos;s connect and discuss how we can work
+            together!
           </p>
         </div>
 
@@ -83,11 +89,14 @@ const ContactSection: React.FC = () => {
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 shadow-[0_0_10px_rgba(0,255,65,0.2)]">
                 <Code className="h-6 w-6 text-primary" />
               </div>
-              <CardTitle className="text-primary text-lg">Full-Stack Developer</CardTitle>
+              <CardTitle className="text-primary text-lg">
+                Full-Stack Developer
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground text-center">
-                Experienced in both frontend and backend technologies, creating end-to-end solutions.
+                Experienced in both frontend and backend technologies, creating
+                end-to-end solutions.
               </p>
             </CardContent>
           </Card>
@@ -97,11 +106,14 @@ const ContactSection: React.FC = () => {
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 shadow-[0_0_10px_rgba(0,255,65,0.2)]">
                 <GraduationCap className="h-6 w-6 text-primary" />
               </div>
-              <CardTitle className="text-primary text-lg">RIT Graduate</CardTitle>
+              <CardTitle className="text-primary text-lg">
+                RIT Graduate
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground text-center">
-                Dual degree holder with strong foundation in computer science and applied computing.
+                Dual degree holder with strong foundation in computer science
+                and applied computing.
               </p>
             </CardContent>
           </Card>
@@ -111,11 +123,14 @@ const ContactSection: React.FC = () => {
               <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 shadow-[0_0_10px_rgba(0,255,65,0.2)]">
                 <Brain className="h-6 w-6 text-primary" />
               </div>
-              <CardTitle className="text-primary text-lg">Problem Solver</CardTitle>
+              <CardTitle className="text-primary text-lg">
+                Problem Solver
+              </CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-muted-foreground text-center">
-                Passionate about tackling complex challenges and learning new technologies.
+                Passionate about tackling complex challenges and learning new
+                technologies.
               </p>
             </CardContent>
           </Card>
@@ -124,11 +139,13 @@ const ContactSection: React.FC = () => {
         {/* Contact Information and Social Links */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Information */}
-          <Card className="border-primary/20
+          <Card
+            className="border-primary/20
           shadow-[0_0_15px_rgba(0,255,65,0.1)]
           hover:shadow-[0_0_25px_rgba(0,255,65,0.3)]
           transition-all
-          duration-300">
+          duration-300"
+          >
             <CardHeader>
               <CardTitle className="text-primary flex items-center">
                 <CiMail className="h-5 w-5 mr-2" />
@@ -154,7 +171,9 @@ const ContactSection: React.FC = () => {
                           {info.value}
                         </a>
                       ) : (
-                        <span className="text-muted-foreground">{info.value}</span>
+                        <span className="text-muted-foreground">
+                          {info.value}
+                        </span>
                       )}
                       {info.copy && (
                         <Button
@@ -176,9 +195,7 @@ const ContactSection: React.FC = () => {
           {/* Social Media & Professional Links */}
           <Card className="border-primary/20 shadow-[0_0_15px_rgba(0,255,65,0.1)] hover:shadow-[0_0_25px_rgba(0,255,65,0.3)] transition-all duration-300">
             <CardHeader>
-              <CardTitle className="text-primary">
-                Let&apos;s Connect
-              </CardTitle>
+              <CardTitle className="text-primary">Let&apos;s Connect</CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div>
@@ -199,7 +216,9 @@ const ContactSection: React.FC = () => {
                         rel="noopener noreferrer"
                         className="flex items-center"
                       >
-                        <link.icon className={`h-4 w-4 mr-2 ${link.colorClass}`} />
+                        <link.icon
+                          className={`h-4 w-4 mr-2 ${link.colorClass}`}
+                        />
                         <span>{link.name}</span>
                       </a>
                     </Button>
@@ -213,23 +232,27 @@ const ContactSection: React.FC = () => {
                   Ready to start a conversation?
                 </p>
                 <div className="flex flex-col gap-3">
-                  <Button 
+                  <Button
                     size="lg"
                     asChild
                     className="matrix-button-hover bg-primary text-primary-foreground hover:bg-primary/90 shadow-[0_0_12px_rgba(0,255,65,0.2)] hover:shadow-[0_0_20px_rgba(0,255,65,0.4)]"
                   >
-                    <a href="mailto:garik@itsgarik.com">
+                    <a href="mailto:garikcareer@gmail.com">
                       <CiMail className="h-5 w-5 mr-2" />
                       Send Email
                     </a>
                   </Button>
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     size="lg"
                     asChild
                     className="matrix-button-hover border-primary text-primary hover:bg-primary hover:text-primary-foreground hover:shadow-[0_0_15px_rgba(0,255,65,0.3)]"
                   >
-                    <a href="https://github.com/itsgarik" target="_blank" rel="noopener noreferrer">
+                    <a
+                      href="https://github.com/garikcareer"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <FaGithub className="h-5 w-5 mr-2" />
                       View GitHub
                     </a>
@@ -240,13 +263,14 @@ const ContactSection: React.FC = () => {
           </Card>
         </div>
 
-        {/* Call to Action */}
+        {/* Final Call to Action */}
         <div className="mt-12 text-center">
           <Card className="border-primary/20 max-w-3xl mx-auto shadow-[0_0_15px_rgba(0,255,65,0.1)] hover:shadow-[0_0_25px_rgba(0,255,65,0.3)] transition-all duration-300">
             <CardContent className="pt-6">
               <p className="text-muted-foreground mb-4">
-                Whether you&apos;re looking for a dedicated developer, have an exciting project in mind, 
-                or just want to chat about technology, I&apos;d love to hear from you.
+                Whether you&apos;re looking for a dedicated developer, have an
+                exciting project in mind, or just want to chat about technology,
+                I&apos;d love to hear from you.
               </p>
               <p className="text-primary font-medium">
                 Let&apos;s build something amazing together!
@@ -256,7 +280,7 @@ const ContactSection: React.FC = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default ContactSection
+export default ContactSection;

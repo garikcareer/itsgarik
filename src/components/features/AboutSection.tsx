@@ -1,7 +1,7 @@
-import React from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
-import { Badge } from '../ui/badge'
-import { GraduationCap } from 'lucide-react'
+import React from 'react';
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card';
+import { Badge } from '../ui/badge';
+import { GraduationCap } from 'lucide-react';
 
 const AboutSection: React.FC = () => {
   const educationDetails = [
@@ -12,35 +12,49 @@ const AboutSection: React.FC = () => {
       year: 2015,
       degrees: [
         'Bachelor of Science in Computer Science',
-        'Associate in Science with Applied Computing'
+        'Associate in Science with Applied Computing',
       ],
       type: 'Dual Degree',
-      description: 'Comprehensive education in software engineering, algorithms, data structures, and applied computing principles. My dual degree program provided a strong foundation in both theoretical computer science concepts and practical application development, preparing me for real-world software engineering challenges.',
-      skills: ['Software Engineering', 'Algorithms', 'Data Structures', 'Applied Computing', 'Computer Systems', 'Database Design'],
+      description:
+        'Comprehensive education in software engineering, algorithms, data structures, and applied computing principles. My dual degree program provided a strong foundation in both theoretical computer science concepts and practical application development, preparing me for real-world software engineering challenges.',
+      skills: [
+        'Software Engineering',
+        'Algorithms',
+        'Data Structures',
+        'Applied Computing',
+        'Computer Systems',
+        'Database Design',
+      ],
       achievements: [
         'Maintained 3.7+ GPA throughout program',
         'Completed capstone project in machine learning',
-        'Active member of Computer Science Society'
-      ]
+        'Active member of Computer Science Society',
+      ],
     },
     {
       institution: 'Technology Prep Academy',
       location: 'Los Angeles, CA',
       period: '2011 - 2015',
       year: 2011,
-      degrees: [
-        'High School Diploma'
-      ],
+      degrees: ['High School Diploma'],
       type: 'Technology Focus',
-      description: 'Early interest in technology and programming. Started the journey into software development with a strong foundation in computer science fundamentals and mathematics.',
-      skills: ['HTML', 'CSS', 'Basic JavaScript', 'Computer Science Fundamentals', 'Mathematics', 'Problem Solving'],
+      description:
+        'Early interest in technology and programming. Started the journey into software development with a strong foundation in computer science fundamentals and mathematics.',
+      skills: [
+        'HTML',
+        'CSS',
+        'Basic JavaScript',
+        'Computer Science Fundamentals',
+        'Mathematics',
+        'Problem Solving',
+      ],
       achievements: [
         'Valedictorian of graduating class',
         'Founded programming club',
-        'Built first web applications'
-      ]
-    }
-  ]
+        'Built first web applications',
+      ],
+    },
+  ];
 
   return (
     <section id="about">
@@ -51,11 +65,12 @@ const AboutSection: React.FC = () => {
             Education
           </h2>
           <div className="w-16 h-1 bg-primary mx-auto mb-6"></div>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            Academic foundation and formal training that shaped my development journey. I&apos;m committed to 
-            continuous learning and professional development through online courses, certifications, 
-            and hands-on project experience to stay current with evolving technologies.
-            </p>
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Academic foundation and formal training that shaped my development
+            journey. I&apos;m committed to continuous learning and professional
+            development through online courses, certifications, and hands-on
+            project experience to stay current with evolving technologies.
+          </p>
         </div>
 
         {/* Education Timeline */}
@@ -88,20 +103,23 @@ const AboutSection: React.FC = () => {
                             </div>
                           </div>
                           {/* Year Badge */}
-                          <Badge 
-                            variant="outline" 
+                          <Badge
+                            variant="outline"
                             className="border-primary/30 text-primary font-mono text-lg px-3 py-1 shadow-[0_0_8px_rgba(0,255,65,0.2)]"
                           >
                             {education.year}
                           </Badge>
                         </div>
-                        
+
                         <div className="flex flex-wrap items-center gap-4 text-muted-foreground">
                           <div className="flex items-center">
                             <GraduationCap className="h-4 w-4 mr-1" />
                             {education.period}
                           </div>
-                          <Badge variant="outline" className="border-primary/30 text-primary hover:shadow-[0_0_8px_rgba(0,255,65,0.2)] transition-all duration-200">
+                          <Badge
+                            variant="outline"
+                            className="border-primary/30 text-primary hover:shadow-[0_0_8px_rgba(0,255,65,0.2)] transition-all duration-200"
+                          >
                             {education.type}
                           </Badge>
                         </div>
@@ -109,27 +127,29 @@ const AboutSection: React.FC = () => {
                       <CardContent className="space-y-6">
                         <div className="flex flex-wrap gap-2 justify-center">
                           {education.degrees.map((degree, degreeIndex) => (
-                            <Badge 
+                            <Badge
                               key={degreeIndex}
-                              variant="outline" 
+                              variant="outline"
                               className="border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200 cursor-default hover:shadow-[0_0_8px_rgba(0,255,65,0.3)]"
                             >
                               {degree}
                             </Badge>
                           ))}
                         </div>
-                        
+
                         <p className="text-muted-foreground leading-relaxed">
                           {education.description}
                         </p>
-                        
+
                         <div>
-                          <h5 className="font-medium text-primary mb-3">Key Areas of Study</h5>
+                          <h5 className="font-medium text-primary mb-3">
+                            Key Areas of Study
+                          </h5>
                           <div className="flex flex-wrap gap-2">
                             {education.skills.map((skill, skillIndex) => (
-                              <Badge 
+                              <Badge
                                 key={skillIndex}
-                                variant="outline" 
+                                variant="outline"
                                 className="border-primary/30 text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-200 cursor-default text-sm hover:shadow-[0_0_8px_rgba(0,255,65,0.3)]"
                               >
                                 {skill}
@@ -139,14 +159,20 @@ const AboutSection: React.FC = () => {
                         </div>
 
                         <div>
-                          <h5 className="font-medium text-primary mb-3">Key Achievements</h5>
+                          <h5 className="font-medium text-primary mb-3">
+                            Key Achievements
+                          </h5>
                           <ul className="space-y-2">
-                            {education.achievements.map((achievement, achIndex) => (
-                              <li key={achIndex} className="flex items-start">
-                                <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0 shadow-[0_0_4px_rgba(0,255,65,0.5)]"></div>
-                                <span className="text-muted-foreground">{achievement}</span>
-                              </li>
-                            ))}
+                            {education.achievements.map(
+                              (achievement, achIndex) => (
+                                <li key={achIndex} className="flex items-start">
+                                  <div className="w-2 h-2 bg-primary rounded-full mt-2 mr-3 flex-shrink-0 shadow-[0_0_4px_rgba(0,255,65,0.5)]"></div>
+                                  <span className="text-muted-foreground">
+                                    {achievement}
+                                  </span>
+                                </li>
+                              )
+                            )}
                           </ul>
                         </div>
                       </CardContent>
@@ -159,7 +185,7 @@ const AboutSection: React.FC = () => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default AboutSection
+export default AboutSection;

@@ -1,8 +1,13 @@
-import React from 'react'
+import React from 'react';
 
-import { Button } from '../ui/button'
-import {CiMail} from "react-icons/ci";
-import {FaFacebookSquare, FaGithub, FaInstagram, FaLinkedin} from 'react-icons/fa';
+import { Button } from '../ui/button';
+import { CiMail } from 'react-icons/ci';
+import {
+  FaFacebookSquare,
+  FaGithub,
+  FaInstagram,
+  FaLinkedin,
+} from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   const socialLinks = [
@@ -10,33 +15,33 @@ const Footer: React.FC = () => {
       name: 'GitHub',
       url: 'https://github.com/garikcareer',
       icon: FaGithub,
-      colorClass: 'social-icon-github'
+      colorClass: 'social-icon-github',
     },
     {
       name: 'LinkedIn',
       url: 'https://www.linkedin.com/in/garikcareer',
       icon: FaLinkedin,
-      colorClass: 'social-icon-linkedin'
+      colorClass: 'social-icon-linkedin',
     },
     {
       name: 'Instagram',
       url: 'https://instagram.com/itsgarik',
       icon: FaInstagram,
-      colorClass: 'social-icon-instagram'
+      colorClass: 'social-icon-instagram',
     },
     {
       name: 'Facebook',
       url: 'https://facebook.com/itsgarik',
       icon: FaFacebookSquare,
-      colorClass: 'social-icon-facebook'
+      colorClass: 'social-icon-facebook',
     },
     {
       name: 'Email',
       url: 'mailto:garik@itsgarik.com',
       icon: CiMail,
-      colorClass: 'social-icon-email'
+      colorClass: 'social-icon-email',
     },
-  ]
+  ];
 
   return (
     <footer className="bg-card/20 backdrop-blur-sm border-t border-border/30 mt-20">
@@ -48,7 +53,8 @@ const Footer: React.FC = () => {
               ITSGarik.com
             </h3>
             <p className="text-muted-foreground">
-              Full-stack software developer passionate about solving problems and building innovative solutions.
+              Full-stack software developer passionate about solving problems
+              and building innovative solutions.
             </p>
           </div>
 
@@ -93,7 +99,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
