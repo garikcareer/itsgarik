@@ -1,50 +1,45 @@
 import React from 'react'
-import { Github, Linkedin, Instagram, Facebook, Mail } from 'lucide-react'
+
 import { Button } from '../ui/button'
-
-type SocialLink = {
-  name: string;
-  url: string;
-  icon: React.ElementType;
-  hoverClasses: string;     
-};
-
-const socialLinks: SocialLink[] = [
-  {
-    name: 'GitHub',
-    url: 'https://github.com/itsgarik',
-    icon: Github,
-    hoverClasses: 'hover:bg-social-github hover:border-social-github'
-  },
-  {
-    name: 'LinkedIn',
-    url: 'https://linkedin.com/in/itsgarik',
-    icon: Linkedin,
-    hoverClasses: 'hover:bg-social-linkedin hover:border-social-linkedin'
-  },
-  {
-    name: 'Instagram',
-    url: 'https://instagram.com/itsgarik',
-    icon: Instagram,
-    hoverClasses: 'hover:bg-social-instagram hover:border-social-instagram'
-  },
-  {
-    name: 'Facebook',
-    url: 'https://facebook.com/itsgarik',
-    icon: Facebook,
-    hoverClasses: 'hover:bg-social-facebook hover:border-social-facebook'
-  },
-  {
-    name: 'Email',
-    url: 'mailto:garik@itsgarik.com',
-    icon: Mail,
-    hoverClasses: 'hover:bg-social-email hover:border-social-email'
-  },
-]
+import {CiMail} from "react-icons/ci";
+import {FaFacebookSquare, FaGithub, FaInstagram, FaLinkedin} from 'react-icons/fa';
 
 const Footer: React.FC = () => {
+  const socialLinks = [
+    {
+      name: 'GitHub',
+      url: 'https://github.com/garikcareer',
+      icon: FaGithub,
+      colorClass: 'social-icon-github'
+    },
+    {
+      name: 'LinkedIn',
+      url: 'https://www.linkedin.com/in/garikcareer',
+      icon: FaLinkedin,
+      colorClass: 'social-icon-linkedin'
+    },
+    {
+      name: 'Instagram',
+      url: 'https://instagram.com/itsgarik',
+      icon: FaInstagram,
+      colorClass: 'social-icon-instagram'
+    },
+    {
+      name: 'Facebook',
+      url: 'https://facebook.com/itsgarik',
+      icon: FaFacebookSquare,
+      colorClass: 'social-icon-facebook'
+    },
+    {
+      name: 'Email',
+      url: 'mailto:garik@itsgarik.com',
+      icon: CiMail,
+      colorClass: 'social-icon-email'
+    },
+  ]
+
   return (
-    <footer className="bg-card border-t border-border mt-20">
+    <footer className="bg-card/20 backdrop-blur-sm border-t border-border/30 mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Brand Section */}
@@ -69,11 +64,7 @@ const Footer: React.FC = () => {
                   variant="outline"
                   size="icon"
                   asChild
-                  className={`
-                    border-primary text-primary hover:text-primary-foreground 
-                    transition-colors duration-300
-                    ${link.hoverClasses}
-                  `}
+                  className="matrix-button-hover border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-colors"
                 >
                   <a
                     href={link.url}
@@ -81,7 +72,7 @@ const Footer: React.FC = () => {
                     rel="noopener noreferrer"
                     aria-label={link.name}
                   >
-                    <link.icon className="h-4 w-4" />
+                    <link.icon className={`h-4 w-4 ${link.colorClass}`} />
                   </a>
                 </Button>
               ))}

@@ -1,15 +1,15 @@
 import React from "react";
-import {ThemeProvider} from "./components/ThemeProvider";
-import MatrixRain from "./components/MatrixRain";
-import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import ProjectsSection from "./components/ProjectsSection";
-import SkillsSection from "./components/SkillsSection";
-import WorkExperienceSection from "./components/WorkExperienceSection";
-import AboutSection from "./components/AboutSection";
-import SportsSection from "./components/SportsSection";
-import ContactSection from "./components/ContactSection";
-import Footer from "./components/Footer";
+import {ThemeProvider} from "./components/context/ThemeContext/ThemeProvider";
+import MatrixRain from "./components/context/ThemeContext/MatrixRain";
+import Navbar from "./components/layout/Navbar";
+import HeroSection from "./components/features/HeroSection";
+import ProjectsSection from "./components/features/ProjectsSection";
+import SkillsSection from "./components/features/SkillsSection";
+import WorkExperienceSection from "./components/features/WorkExperienceSection";
+import AboutSection from "./components/features/AboutSection";
+import SportsSection from "./components/features/SportsSection";
+import ContactSection from "./components/features/ContactSection";
+import Footer from "./components/layout/Footer";
 
 export default function App() {
     return (

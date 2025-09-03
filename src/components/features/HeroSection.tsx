@@ -1,6 +1,6 @@
 import React from 'react'
 import { MapPin } from 'lucide-react'
-import portrait from '../assets/images/portrait.jpg'
+import portrait from '../../assets/images/portrait.jpg'
 
 const HeroSection: React.FC = () => {
   return (

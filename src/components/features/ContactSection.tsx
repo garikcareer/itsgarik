@@ -1,6 +1,6 @@
 import React from 'react'
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card'
-import { Button } from './ui/button'
+import { Card, CardContent, CardHeader, CardTitle } from '../ui/card'
+import { Button } from '../ui/button'
 import { MapPin, Calendar, Code, GraduationCap, Brain } from 'lucide-react'
 import { CiMail } from "react-icons/ci";
 import { FaFacebookSquare, FaGithub, FaInstagram, FaLinkedin } from 'react-icons/fa';
@@ -124,7 +124,11 @@ const ContactSection: React.FC = () => {
         {/* Contact Information and Social Links */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           {/* Contact Information */}
-          <Card className="border-primary/20 shadow-[0_0_15px_rgba(0,255,65,0.1)] hover:shadow-[0_0_25px_rgba(0,255,65,0.3)] transition-all duration-300">
+          <Card className="border-primary/20
+          shadow-[0_0_15px_rgba(0,255,65,0.1)]
+          hover:shadow-[0_0_25px_rgba(0,255,65,0.3)]
+          transition-all
+          duration-300">
             <CardHeader>
               <CardTitle className="text-primary flex items-center">
                 <CiMail className="h-5 w-5 mr-2" />

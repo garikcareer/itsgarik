@@ -7,22 +7,7 @@ import {
   DropdownMenuTrigger,
 } from '../ui/dropdown-menu'
 import { Button } from '../ui/button'
-import ThemeToggle from '../ui/ThemeToggle'
-
-type NavItem = {
-  label: string;
-  sectionId: string;
-  icon: React.ElementType;
-};
-
-const navItems: NavItem[] = [
-  { label: 'Projects', sectionId: 'projects', icon: FileText },
-  { label: 'Skills', sectionId: 'skills', icon: Code },
-  { label: 'Experience', sectionId: 'experience', icon: Briefcase },
-  { label: 'Education', sectionId: 'about', icon: GraduationCap }, // Note: Kept sectionId 'about' as in original
-  { label: 'Sports', sectionId: 'sports', icon: Trophy },
-  { label: 'Contact', sectionId: 'contact', icon: Mail },
-];
+import ThemeToggle from '../context/ThemeContext/ThemeToggle'
 
 const Navbar: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
@@ -33,10 +18,10 @@ const Navbar: React.FC = () => {
   }
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
+    <nav className="sticky top-0 w-full bg-background/20 backdrop-blur-sm border-b border-border/30">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          {/* Logo/Brand */}
+          {/* Logo/Brand - Disabled editing */}
           <div className="flex items-center space-x-2 pointer-events-none select-none">
             <Code className="h-8 w-8 text-primary" />
             <span className="text-xl font-mono font-semibold text-primary text-center">
@@ -44,21 +29,63 @@ const Navbar: React.FC = () => {
             </span>
           </div>
 
-          {/* **Refactored Desktop Navigation** */}
+          {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-8">
-              {navItems.map((item) => (
-                <button
-                  key={item.label}
-                  onClick={() => scrollToSection(item.sectionId)}
-                  className="matrix-nav-item relative px-3 py-2 text-sm font-medium transition-all duration-300 group"
-                >
-                  <span className="relative z-10 transition-colors duration-300 group-hover:text-primary">
-                    {item.label}
-                  </span>
-                  <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_8px_var(--primary)]"></div>
-                </button>
-              ))}
+              <button
+                onClick={() => scrollToSection('projects')}
+                className="matrix-nav-item relative px-3 py-2 text-sm font-medium transition-all duration-300 group"
+              >
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-primary">
+                  Projects
+                </span>
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_8px_var(--primary)]"></div>
+              </button>
+              <button
+                onClick={() => scrollToSection('skills')}
+                className="matrix-nav-item relative px-3 py-2 text-sm font-medium transition-all duration-300 group"
+              >
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-primary">
+                  Skills
+                </span>
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_8px_var(--primary)]"></div>
+              </button>
+              <button
+                onClick={() => scrollToSection('experience')}
+                className="matrix-nav-item relative px-3 py-2 text-sm font-medium transition-all duration-300 group"
+              >
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-primary">
+                  Experience
+                </span>
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_8px_var(--primary)]"></div>
+              </button>
+              <button
+                onClick={() => scrollToSection('about')}
+                className="matrix-nav-item relative px-3 py-2 text-sm font-medium transition-all duration-300 group"
+              >
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-primary">
+                  Education
+                </span>
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_8px_var(--primary)]"></div>
+              </button>
+              <button
+                onClick={() => scrollToSection('sports')}
+                className="matrix-nav-item relative px-3 py-2 text-sm font-medium transition-all duration-300 group"
+              >
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-primary">
+                  Sports
+                </span>
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_8px_var(--primary)]"></div>
+              </button>
+              <button
+                onClick={() => scrollToSection('contact')}
+                className="matrix-nav-item relative px-3 py-2 text-sm font-medium transition-all duration-300 group"
+              >
+                <span className="relative z-10 transition-colors duration-300 group-hover:text-primary">
+                  Contact
+                </span>
+                <div className="absolute bottom-0 left-0 w-0 h-0.5 bg-primary transition-all duration-300 group-hover:w-full group-hover:shadow-[0_0_8px_var(--primary)]"></div>
+              </button>
             </div>
           </div>
 
@@ -66,6 +93,7 @@ const Navbar: React.FC = () => {
           <div className="flex items-center space-x-4">
             <ThemeToggle />
             
+            {/* Mobile menu */}
             <div className="md:hidden">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
@@ -75,16 +103,30 @@ const Navbar: React.FC = () => {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent align="end" className="w-56">
-                  {/* **Refactored Mobile Navigation** */}
-                  {navItems.map((item) => (
-                    <DropdownMenuItem
-                      key={item.label}
-                      onClick={() => scrollToSection(item.sectionId)}
-                    >
-                      <item.icon className="mr-2 h-4 w-4" />
-                      <span>{item.label}</span>
-                    </DropdownMenuItem>
-                  ))}
+                  <DropdownMenuItem onClick={() => scrollToSection('projects')}>
+                    <FileText className="mr-2 h-4 w-4" />
+                    <span>Projects</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => scrollToSection('skills')}>
+                    <Code className="mr-2 h-4 w-4" />
+                    <span>Skills</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => scrollToSection('experience')}>
+                    <Briefcase className="mr-2 h-4 w-4" />
+                    <span>Experience</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => scrollToSection('about')}>
+                    <GraduationCap className="mr-2 h-4 w-4" />
+                    <span>Education</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => scrollToSection('sports')}>
+                    <Trophy className="mr-2 h-4 w-4" />
+                    <span>Sports</span>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem onClick={() => scrollToSection('contact')}>
+                    <Mail className="mr-2 h-4 w-4" />
+                    <span>Contact</span>
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
             </div>

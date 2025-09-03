@@ -57,6 +57,7 @@
       },
       "devDependencies": {
             "@types/node": "^20.10.0",
+            "@types/react": "^19.1.12",
             "@typescript-eslint/eslint-plugin": "^8.42.0",
             "@typescript-eslint/parser": "^8.42.0",
             "@vitejs/plugin-react-swc": "^3.10.2",
